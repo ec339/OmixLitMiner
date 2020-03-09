@@ -131,7 +131,7 @@ pubmed_summary <- function(synonyms, vec.keyword=NA, fields="TIAB") {
   qsynonym = sapply(synonyms, function(x) paste0("\"",x,"\"") )
 
   if(!is.na(vec.keyword)) {
-    keyword4query = paste(qkeyword, collapse=paste(' AND', fterm, sep='') )
+    keyword4query = paste(qkeyword, collapse=paste(fterm, ' AND', sep='') )
 
     pub_query = paste0(keyword4query, fterm, ' AND ( ', paste0(qsynonym, collapse=paste0(fterm, ' OR ') ), fterm,')' )
 
